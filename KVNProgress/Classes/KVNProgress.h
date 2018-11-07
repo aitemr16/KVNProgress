@@ -23,6 +23,8 @@ typedef void (^KVNCompletionBlock)(void);
 
 #pragma mark - Properties
 
++ (KVNProgress *)sharedView;
+
 @property (nonatomic) KVNProgressStyle style;
 
 #pragma mark - Configuration
