@@ -679,6 +679,10 @@ static KVNProgressConfiguration *configuration;
 	[self layoutIfNeeded];
 }
 
+CGFloat degreesToRadians (CGFloat deg) {
+	return deg * (M_PI / 180.0f);
+}
+
 - (void)setupCircleProgressView
 {
 	// Constraints
@@ -703,8 +707,8 @@ static KVNProgressConfiguration *configuration;
 	
 	UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:center
 															  radius:(radius - self.configuration.lineWidth)
-														  startAngle:GLKMathDegreesToRadians(-45.0f)
-															endAngle:GLKMathDegreesToRadians(275.0f)
+														  startAngle:degreesToRadians(-45.0f)
+															endAngle:degreesToRadians(275.0f)
 														   clockwise:YES];
 	
 	self.circleProgressLineLayer = [CAShapeLayer layer];
@@ -727,8 +731,8 @@ static KVNProgressConfiguration *configuration;
 	
 	UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:center
 															  radius:(radius - self.configuration.lineWidth)
-														  startAngle:GLKMathDegreesToRadians(-90.0f)
-															endAngle:GLKMathDegreesToRadians(275.0f)
+														  startAngle:degreesToRadians(-90.0f)
+															endAngle:degreesToRadians(275.0f)
 														   clockwise:YES];
 	
 	[self cancelCircleAnimation];
@@ -853,8 +857,8 @@ static KVNProgressConfiguration *configuration;
 	// Circle
 	UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:center
 															  radius:(radius - self.configuration.lineWidth)
-														  startAngle:GLKMathDegreesToRadians(-90.0f)
-															endAngle:GLKMathDegreesToRadians(275.0f)
+														  startAngle:degreesToRadians(-90.0f)
+															endAngle:degreesToRadians(275.0f)
 														   clockwise:YES];
 	
 	self.circleProgressLineLayer = [CAShapeLayer layer];
