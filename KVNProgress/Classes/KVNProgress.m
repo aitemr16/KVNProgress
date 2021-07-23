@@ -7,7 +7,6 @@
 //
 
 @import QuartzCore;
-@import GLKit;
 
 #import "KVNProgress.h"
 
